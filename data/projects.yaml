@@ -7,9 +7,10 @@ projects:
       - Flask
       - React
       - OpenAI API
+    epitaph: "API 비용의 무게를 견디지 못하고 잠들다"
     reason: "OpenAI API 비용 부담과 유사 서비스 출시"
     learned: "API 비용 산정의 중요성, MVP 단계에서의 빠른 출시 필요성"
-    github: "github.com/username/diet-ai"
+    github: "github.com/Jiwook00/project-graveyard"
     author: "Jiwook00"
     status: "파묘 가능"
   - id: 202412111999
@@ -18,8 +19,9 @@ projects:
     techStack:
       - Next.js
       - TypeScript
+    epitaph: "우물쭈물 하다가 이렇게 끝날 줄 알았지"
     reason: "시장 조사 부족으로 인한 방향성 상실"
     learned: "사전 시장 조사의 중요성"
-    github: "github.com/username/project"
+    github: "github.com/Jiwook00/project-graveyard"
     author: "Jiwook00"
     status: "파묘 불가능"
