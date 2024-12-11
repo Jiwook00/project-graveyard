@@ -10,7 +10,7 @@ projects:
     reason: "OpenAI API 비용 부담과 유사 서비스 출시"
     learned: "API 비용 산정의 중요성, MVP 단계에서의 빠른 출시 필요성"
     github: "github.com/username/diet-ai"
-    author: "username"
+    author: "Jiwook00"
     status: "파묘 가능"
   - id: 202412111999
     title: "새로운 테스트 프로젝트"
@@ -21,4 +21,5 @@ projects:
     reason: "시장 조사 부족으로 인한 방향성 상실"
     learned: "사전 시장 조사의 중요성"
     github: "github.com/username/project"
+    author: "Jiwook00"
     status: "파묘 불가능"
