@@ -32,6 +32,7 @@ npm run add-project
 
 - 프로젝트명
 - 개발 기간 (예: 2023.08 - 2023.10)
+- 프로젝트 설명
 - 기술 스택 (쉼표로 구분) e.g. `Python, Flask, React, OpenAI API`
 - 묘비명
 - 중단 사유

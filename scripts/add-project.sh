@@ -36,10 +36,14 @@ read GITHUB
 echo "상태 (파묘 가능/파묘 불가능):"
 read STATUS
 
+echo "프로젝트 설명:"
+read DESCRIPTION
+
 # YAML 형식으로 변환
 PROJECT="  - id: $ID
     title: \"$TITLE\"
     duration: \"$DURATION\"
+    description: \"$DESCRIPTION\"
     techStack: 
 $(echo $TECH_STACK | tr ',' '\n' | sed 's/^/      - /')
     epitaph: \"$EPITAPH\"

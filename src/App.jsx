@@ -219,6 +219,10 @@ const ProjectGraveyard = () => {
             <CardContent>
               <div className="space-y-4">
                 <div>
+                  <h3 className="font-semibold mb-2">프로젝트 설명</h3>
+                  <p className="text-gray-600">{selectedProject.description}</p>
+                </div>
+                <div>
                   <h3 className="font-semibold mb-2">사용 기술</h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.techStack.map((tech) => (
