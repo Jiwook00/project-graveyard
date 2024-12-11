@@ -18,6 +18,8 @@ import yaml from "js-yaml";
 const ProjectGraveyard = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [projects, setProjects] = useState([]);
+  const [authorImages, setAuthorImages] = useState({});
+  const defaultAvatar = "https://github.identicons.github.com/identicon.png"; // GitHub 기본 아이덴티콘
 
   useEffect(() => {
     const fetchProjects = async () => {
@@ -35,6 +37,32 @@ const ProjectGraveyard = () => {
 
     fetchProjects();
   }, []);
+
+  useEffect(() => {
+    const fetchAuthorImages = async () => {
+      const images = {};
+      for (const project of projects) {
+        try {
+          const response = await fetch(
+            `https://api.github.com/users/${project.author}`
+          );
+          const data = await response.json();
+          images[project.author] = data.avatar_url;
+        } catch (error) {
+          console.error(
+            `프로필 이미지를 불러오는데 실패했습니다: ${project.author}`,
+            error
+          );
+          images[project.author] = defaultAvatar;
+        }
+      }
+      setAuthorImages(images);
+    };
+
+    if (projects.length > 0) {
+      fetchAuthorImages();
+    }
+  }, [projects]);
 
   const handleGithubClick = (e, github) => {
     e.stopPropagation(); // 카드 클릭 이벤트 전파 방지
@@ -84,15 +112,36 @@ const ProjectGraveyard = () => {
                   <span>{project.successors}</span>
                 </div>
               </div>
-              <div
-                className={`text-sm mt-2 px-2 py-1 rounded-full w-fit
-                ${
-                  project.status === "파묘 가능"
-                    ? "bg-green-100 text-green-700"
-                    : "bg-yellow-100 text-yellow-700"
-                }`}
-              >
-                {project.status}
+              <div className="flex items-center justify-between">
+                <div
+                  className="flex items-center gap-2 cursor-pointer hover:text-blue-600"
+                  onClick={(e) =>
+                    handleGithubClick(e, `github.com/${project.author}`)
+                  }
+                >
+                  <img
+                    src={authorImages[project.author] || defaultAvatar}
+                    alt={`${project.author}'s profile`}
+                    className="w-6 h-6 rounded-full"
+                    onError={(e) => {
+                      e.target.src = defaultAvatar;
+                      e.target.onerror = null;
+                    }}
+                  />
+                  <span className="text-sm text-gray-600">
+                    {project.author}
+                  </span>
+                </div>
+                <div
+                  className={`text-sm px-2 py-1 rounded-full w-fit
+                  ${
+                    project.status === "파묘 가능"
+                      ? "bg-green-100 text-green-700"
+                      : "bg-yellow-100 text-yellow-700"
+                  }`}
+                >
+                  {project.status}
+                </div>
               </div>
             </div>
           </CardContent>
