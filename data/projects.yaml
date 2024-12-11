@@ -1,0 +1,14 @@
+projects:
+  - id: 1
+    title: "AI 기반 식단 추천 서비스"
+    duration: "2023.08 - 2023.10"
+    techStack:
+      - Python
+      - Flask
+      - React
+      - OpenAI API
+    reason: "OpenAI API 비용 부담과 유사 서비스 출시"
+    learned: "API 비용 산정의 중요성, MVP 단계에서의 빠른 출시 필요성"
+    github: "github.com/username/diet-ai"
+    author: "username"
+    status: "파묘 가능"
