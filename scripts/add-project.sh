@@ -3,6 +3,13 @@
 # 현재 날짜로 ID 생성 (YYYYMMDD + 4자리 랜덤 숫자)
 ID=$(date +%Y%m%d)$((RANDOM % 9000 + 1000))
 
+# Git 설정에서 사용자명 가져오기
+AUTHOR=$(git config user.name)
+if [ -z "$AUTHOR" ]; then
+    echo "Git 사용자명을 찾을 수 없습니다. 수동으로 입력해주세요:"
+    read AUTHOR
+fi
+
 # 사용자 입력 받기
 echo "프로젝트 정보를 입력해주세요:"
 echo "프로젝트명:"
@@ -35,6 +42,7 @@ $(echo $TECH_STACK | tr ',' '\n' | sed 's/^/      - /')
     reason: \"$REASON\"
     learned: \"$LEARNED\"
     github: \"$GITHUB\"
+    author: \"$AUTHOR\"
     status: \"$STATUS\""
 
 # projects.yaml 파일에 추가
