@@ -12,3 +12,13 @@ projects:
     github: "github.com/username/diet-ai"
     author: "username"
     status: "파묘 가능"
+  - id: 202412111999
+    title: "새로운 테스트 프로젝트"
+    duration: "2024.12 - 2024.12"
+    techStack:
+      - Next.js
+      - TypeScript
+    reason: "시장 조사 부족으로 인한 방향성 상실"
+    learned: "사전 시장 조사의 중요성"
+    github: "github.com/username/project"
+    status: "파묘 불가능"
