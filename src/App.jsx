@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Card,
   CardHeader,
@@ -13,45 +13,28 @@ import {
   ArrowUpRight,
   HandHeart,
 } from "lucide-react";
+import yaml from "js-yaml";
 
 const ProjectGraveyard = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [projects, setProjects] = useState([]);
 
-  const projects = [
-    {
-      id: 1,
-      title: "AI 기반 식단 추천 서비스",
-      duration: "2023.08 - 2023.10",
-      techStack: ["Python", "Flask", "React", "OpenAI API"],
-      reason: "OpenAI API 비용 부담과 유사 서비스 출시",
-      learned: "API 비용 산정의 중요성, MVP 단계에서의 빠른 출시 필요성",
-      github: "github.com/username/diet-ai",
-      successors: 2,
-      status: "파묘 가능",
-    },
-    {
-      id: 2,
-      title: "개발자 멘토링 매칭 플랫폼",
-      duration: "2024.01 - 2024.02",
-      techStack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
-      reason: "팀원들과의 일정 조율 어려움",
-      learned: "원격 협업에서의 명확한 커뮤니케이션 중요성",
-      github: "github.com/username/mentor-match",
-      successors: 0,
-      status: "파묘 가능",
-    },
-    {
-      id: 3,
-      title: "부동산 실거래가 분석 도구",
-      duration: "2023.11 - 2024.01",
-      techStack: ["Django", "React", "Docker", "Redis"],
-      reason: "공공 API 정책 변경으로 인한 기능 축소",
-      learned: "외부 API 의존성 최소화의 중요성",
-      github: "github.com/username/real-estate-analytics",
-      successors: 8,
-      status: "파묘 가능",
-    },
-  ];
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch(
+          "https://raw.githubusercontent.com/Jiwook00/project-graveyard/main/data/projects.yaml"
+        );
+        const yamlText = await response.text();
+        const data = yaml.load(yamlText);
+        setProjects(data.projects);
+      } catch (error) {
+        console.error("프로젝트 데이터를 불러오는데 실패했습니다:", error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   const handleGithubClick = (e, github) => {
     e.stopPropagation(); // 카드 클릭 이벤트 전파 방지
