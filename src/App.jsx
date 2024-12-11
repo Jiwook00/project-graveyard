@@ -171,8 +171,8 @@ const ProjectGraveyard = () => {
     <div className="min-h-screen bg-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <header className="mb-8 text-center">
-          <h1 className="text-4xl font-bold flex items-center justify-center gap-2 mb-2">
-            <Skull className="h-8 w-8" />
+          <h1 className="text-2xl md:text-4xl font-bold flex items-center justify-center gap-2 mb-2">
+            <Skull className="h-6 w-6 md:h-8 md:w-8" />
             사이드프로젝트의 무덤
           </h1>
           <p className="text-gray-600 mb-8">
