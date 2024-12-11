@@ -4,14 +4,27 @@
 
 완료되지 못한 프로젝트들의 이야기가 모이는 곳입니다. 중단된 사이드프로젝트들을 기리고 그로부터 얻은 교훈을 공유하는 플랫폼입니다.
 
-## 프로젝트 등록하기
+## 프로젝트 등록 방법
 
-### CLI를 통한 등록
+### 1. 이 저장소를 Fork 합니다.
 
-프로젝트를 무덤에 안장하는 방법은 다음과 같습니다:
+### 2. Fork한 저장소를 로컬에 clone 합니다:
 
 ```bash
-# 프로젝트 등록 스크립트 실행
+git clone https://github.com/{your-username}/project-graveyard.git
+```
+
+### 3. 새로운 브랜치를 생성합니다:
+
+```bash
+git checkout -b add-project/{project-name}
+```
+
+### 4. 프로젝트 등록 스크립트를 실행합니다:
+
+> 반드시 아래의 명령어로 프로젝트를 등록해주세요.
+
+```bash
 npm run add-project
 ```
 
@@ -20,10 +33,43 @@ npm run add-project
 - 프로젝트명
 - 개발 기간 (예: 2023.08 - 2023.10)
 - 기술 스택 (쉼표로 구분) e.g. `Python, Flask, React, OpenAI API`
+- 묘비명
 - 중단 사유
 - 배운 점
 - GitHub 저장소 주소
 - 상태 (파묘 가능/파묘 불가능)
+
+### 5. `data/projects.yaml` 파일을 확인합니다.
+
+> 결과를 확인하고 수정이 필요하면 수정 후 커밋합니다.
+
+```yaml
+- id: { YYYYMMDDXXXX } # 현재 날짜 + 랜덤 4자리
+  title: "프로젝트명"
+  duration: "YYYY.MM - YYYY.MM"
+  techStack:
+    - 기술1
+    - 기술2
+  epitaph: "묘비명"
+  reason: "중단 사유"
+  learned: "배운 점"
+  github: "github.com/username/repo"
+  author: "GitHub 사용자명"
+  status: "파묘 가능/파묘 불가능"
+```
+
+### 6. 변경사항을 커밋하고 Fork한 저장소로 푸시합니다:
+
+```bash
+git add data/projects.yaml
+git commit -m "Add {project-name} to Project Graveyard"
+git push origin add-project/{project-name}
+```
+
+### 7. GitHub에서 풀 리퀘스트를 생성합니다.
+
+- Fork된 저장소에서 원본 저장소로 PR을 생성합니다.
+- [PR템플릿](.github/pull_request_template.md)을 사용해주세요.
 
 ## 기술 스택
 
