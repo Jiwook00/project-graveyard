@@ -86,6 +86,14 @@ const ProjectGraveyard = () => {
               <Calendar className="h-4 w-4" />
               {project.duration}
             </CardDescription>
+            {project.epitaph && (
+              <div className="border-l-4 border-gray-300 pl-3 py-1">
+                <p className="text-gray-600 italic">
+                  <span className="font-semibold not-italic">묘비명: </span>
+                  {project.epitaph}
+                </p>
+              </div>
+            )}
           </CardHeader>
           <CardContent>
             <div className="space-y-4">

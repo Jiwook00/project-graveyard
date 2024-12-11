@@ -21,6 +21,9 @@ read DURATION
 echo "기술 스택 (쉼표로 구분):"
 read TECH_STACK
 
+echo "묘비명:"
+read EPITAPH
+
 echo "중단 사유:"
 read REASON
 
@@ -39,6 +42,7 @@ PROJECT="  - id: $ID
     duration: \"$DURATION\"
     techStack: 
 $(echo $TECH_STACK | tr ',' '\n' | sed 's/^/      - /')
+    epitaph: \"$EPITAPH\"
     reason: \"$REASON\"
     learned: \"$LEARNED\"
     github: \"$GITHUB\"
