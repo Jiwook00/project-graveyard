@@ -27,3 +27,15 @@ projects:
     github: "github.com/Jiwook00/project-graveyard"
     author: "Jiwook00"
     status: "파묘 불가능"
+  - id: 202412145043
+    title: "spin-the-fan"
+    duration: "2024-06 ~~~~~"
+    description: "손가락으로 팬을 돌립니다"
+    techStack:
+      - react
+    epitaph: "선풍기 돌리기"
+    reason: "빠져서"
+    learned: "해보자!"
+    github: "없습니다 ㅠ"
+    author: "MadHeo"
+    status: "파묘가능"
