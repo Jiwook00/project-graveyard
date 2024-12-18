@@ -4,7 +4,7 @@
 
 완료되지 못한 프로젝트들의 이야기가 모이는 곳입니다. 중단된 사이드프로젝트들을 기리고 그로부터 얻은 교훈을 공유하는 플랫폼입니다.
 
-🪦 [사이드프로젝트의 무덤](https://project-graveyard.vercel.app/)
+🪦 [사이드프로젝트의 무덤](https://project-graveyard.netlify.app/)
 
 ## 프로젝트 등록 방법
 
