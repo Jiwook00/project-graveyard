@@ -39,3 +39,15 @@ projects:
     github: "없습니다 ㅠ"
     author: "MadHeo"
     status: "파묘가능"
+  - id: 202412204804
+    title: "숏스스"
+    duration: "2024.03 ~ 2023.09"
+    description: "숏폼드라마 플랫폼, 숏폼강의 플랫폼"
+    techStack:
+      - React
+    epitaph: "숏폼영상플랫폼"
+    reason: "비즈니스 중단"
+    learned: "개발자는 대단하다"
+    github: "https://github.com/Shortsusu/shortsusu"
+    author: "jinwook4217"
+    status: "파묘 가능"
