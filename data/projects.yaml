@@ -51,3 +51,16 @@ projects:
     github: "https://github.com/Shortsusu/shortsusu"
     author: "jinwook4217"
     status: "파묘 가능"
+  - id: 202501124331
+    title: "티끌모아티끌"
+    duration: "2022.03 - 2022.05"
+    description: "사내에서 팀원들과 절약 챌린지를 위해 만든 소비 기록 앱"
+    techStack:
+      - React
+      - Express
+    epitaph: "그때부터 모았더라면.."
+    reason: "팀원들의 창의적인 예산 회피 전략과 소욕구를 이기지 못해 더 이상 서비스를 사용하지 않게 되어버림"
+    learned: "티끌 모아 티끌이다."
+    github: "https://github.com/Jiwook00/tighten-belt-client"
+    author: "Jiwook00"
+    status: "파묘 불가능"
