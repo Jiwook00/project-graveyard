@@ -57,7 +57,7 @@ projects:
     description: "사내에서 팀원들과 절약 챌린지를 위해 만든 소비 기록 앱"
     techStack:
       - React
-      - Epress
+      - Express
     epitaph: "그때부터 모았더라면.."
     reason: "팀원들의 창의적인 예산 회피 전략과 소욕구를 이기지 못해 더 이상 서비스를 사용하지 않게 되어버림"
     learned: "티끌 모아 티끌이다."
